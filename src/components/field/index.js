@@ -223,6 +223,7 @@ export default class TextField extends PureComponent {
 
     let options = {
       toValue: this.focusState(),
+      useNativeDriver: false,
       duration,
     };
 
@@ -466,7 +467,7 @@ export default class TextField extends PureComponent {
   }
 
   inputStyle() {
-    let { fontSize, baseColor, textColor, disabled, multiline } = this.props;
+    let { fontSize, baseColor, textColor, disabled, multiline, fontFamily } = this.props;
 
     let color = disabled || this.isDefaultVisible()?
       baseColor:
@@ -475,7 +476,7 @@ export default class TextField extends PureComponent {
     let style = {
       fontSize,
       color,
-
+      fontFamily,
       height: this.inputHeight(),
     };
 
